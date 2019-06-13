@@ -1,0 +1,24 @@
+{
+  "name": "semana-omniStack-proj-instagram",
+  "version": "1.0.0",
+  "description": "é uma semana onde é desenvolvido um app do zero utilizando como principal linguagem de programação  tanto no back-end como no front-end javascript.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Suele/semana-omniStack-proj-instagram.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Suele/semana-omniStack-proj-instagram/issues"
+  },
+  "homepage": "https://github.com/Suele/semana-omniStack-proj-instagram#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
