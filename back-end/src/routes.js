@@ -7,5 +7,6 @@ const upload = multer(uploadConfig);
 
 // passa a imagem pela rota, neste caso apenas uma imagem.
 router.post("/posts", upload.single("image"), PostController.store);
+router.get("/posts", PostController.index);
 
 module.exports = router;
