@@ -1,14 +1,17 @@
 const Post = require("../models/Post");
 
 module.exports = {
-  async index(req, res) {},
+  async index(req, res) {
+    const posts = await Post.find().sort("-createdAt");
+    res.json(posts);
+  },
 
   async store(req, res) {
     console.log("req.file: ", req.file);
     console.log("req.body: ", req.body);
 
-    const { author, place, description, hashtags} = req.body;
-    const {filename: image} = req.file;
+    const { author, place, description, hashtags } = req.body;
+    const { filename: image } = req.file;
 
     const post = await Post.create({
       author,
@@ -18,6 +21,6 @@ module.exports = {
       image
     });
 
-    return res.json({post});
+    return res.json(post);
   }
 };
