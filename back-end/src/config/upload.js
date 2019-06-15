@@ -9,9 +9,7 @@ module.exports = {
       "..",
       "..",
       "..",
-      "uploads",
-      ".",
-      "resized"
+      "uploads"
     ),
     filename: function(req, file, cd) {
       cd(null, file.originalname);
