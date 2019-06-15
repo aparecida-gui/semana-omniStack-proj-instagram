@@ -9,7 +9,7 @@ const upload = multer(uploadConfig);
 // passa a imagem pela rota, neste caso apenas uma imagem.
 router.post("/posts", upload.single("image"), PostController.store);
 router.get("/posts", PostController.index);
-// passa-se por parametro qual a imagem que deverá ter um like.
+// passa-se por parametro qual o post que recebera um like.
 router.post("/posts/:id/like", LikeController.store);
 
 module.exports = router;
