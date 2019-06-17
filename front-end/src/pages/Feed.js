@@ -5,16 +5,38 @@ import like from "../assets/like.svg";
 import comment from "../assets/comment.svg";
 import send from "../assets/send.svg";
 import api from "../services/api";
+import io from "socket.io-client";
 
 class Feed extends React.Component {
   state = {
     feed: []
   };
 
+  registerToSocket = () => {
+    const socket = io("http://localhost:3333");
+
+    socket.on("post", newPost => {
+      this.setState({feed: [newPost, ...this.state.feed]})
+    })
+
+    socket.on("like", likePost => {
+      this.setState({
+        feed: this.state.feed.map(post => (
+          post._id === likePost._id ? likePost: post
+        ))
+      })
+    })
+  }
+
   async componentDidMount() {
+    this.registerToSocket();
     const response = await api.get("posts");
     this.setState({ feed: response.data });
     console.log("dataApi: ", this.state.feed);
+  }
+
+  handleLike = (id) => {
+    api.post(`/posts/${id}/like`);
   }
 
   render() {
@@ -36,7 +58,9 @@ class Feed extends React.Component {
             />
             <footer>
               <div className="actions">
+              <button type="button" onClick={()=> this.handleLike(dataPost._id)}>
                 <img src={like} alt="curtir" />
+              </button>
                 <img src={comment} alt="comentário" />
                 <img src={send} alt="testes" />
               </div>
