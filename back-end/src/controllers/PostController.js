@@ -42,7 +42,7 @@ module.exports = {
       image: fileName
     });
 
-    req.io.emit("New post", post);
+    req.io.emit("post", post);
 
     return res.json(post);
   }
