@@ -15,7 +15,7 @@ app.use((req, res, next) => {
 // adiciona o caminho de acesso para as imagens que estão na pasta uploads/resized.
 app.use(
   "/files",
-  express.static(path.resolve(__dirname, "..", "uploads", "resized"))
+  express.static(path.resolve(__dirname, "..", "..", "uploads", "resized"))
 );
 app.use(require("./routes"));
 
