@@ -1,16 +1,78 @@
-header#main-header{
-  background: #fff;
-  height: 72px;
-  border-bottom: 1px solid #DDD;
+header#main-header {
+  background-color: #fafafa;
+  padding: 0;
+  order: 0;
+}
+
+header#main-header .header-logo {
+  -webkit-box-flex: 1;
+  flex: 1 9999 0%;
+  min-width: 40px;
+}
+
+header#main-header .header-logo img {
+  -webkit-box-flex: 0;
+  flex: 0 0 auto;
+  justify-content: flex-start;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  flex-direction: row;
+  -webkit-box-align: center;
+  align-items: center;
+  align-content: stretch;
+  height: 29px;
+  width: 203px;
+  display: block;
 }
 
 header#main-header .header-content {
-  width: 100%;
-  max-width: 980px;
-  margin:  0 auto;
-  height: 72px;
-  padding: 30px;
   display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  flex-direction: row;
+  height: 77px;
+  -webkit-box-pack: center;
+  justify-content: center;
+  max-width: 1010px;
+  padding: 26px 20px;
+  transition: height 0.2s ease-in-out;
+  width: 100%;
   align-items: center;
-  justify-content: space-between;
+  max-width: 980px;
+  margin: 0 auto;
+  height: 72px;
+  -webkit-box-align: center;
+}
+
+header#main-header .header-main-publication-perfil {
+  align-content: center;
+  -webkit-box-align: center;
+  align-items: center;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  flex-direction: row;
+  flex-wrap: wrap;
+  -webkit-box-flex: 1;
+  flex: 1 0 0%;
+  -webkit-box-pack: end;
+  justify-content: flex-end;
+}
+
+header#main-header .header-content-publication-perfil {
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  flex-direction: row;
+  padding-left: 24px;
+  white-space: nowrap;
+}
+
+header#main-header .header-content-publication-perfil img {
+  background-size: 337px 298px;
+  background-position: 0 -274px;
+  height: 24px;
+  width: 24px;
+  display: block;
+  margin-left: 30px;
 }
