@@ -62,4 +62,7 @@ typings/
 
 # file the uploads
 uploads/resized
-.jpg
+*.jpg,*.png
+
+uploads
+*.jpg,*.png
